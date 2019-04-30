@@ -20,6 +20,14 @@ function prevardump($x) {
 
 $router = new Framework\Router();
 
+if (!isset($_SERVER['REDIRECT_URL'])) {
+    $_SERVER['REDIRECT_URL'] = "";
+}
+
+$router->add('', ['controller' => 'Standard', 'action' => 'index']);
+$router->add('/', ['controller' => 'Standard', 'action' => 'index']);
+$router->add('/{controller}', ['action' => 'index']);
+$router->add('/{controller}/', ['action' => 'index']);
 $router->add('/{controller}/{action}');
 
 $router->parseActionParameter($_SERVER['QUERY_STRING']);
