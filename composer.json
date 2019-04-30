@@ -1,0 +1,12 @@
+{
+  "require": {
+    "paypal/rest-api-sdk-php": "*",
+    "doctrine/orm": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Framework\\": "Framework/",
+      "App\\": "App/"
+    }
+  }
+}

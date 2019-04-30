@@ -1,0 +1,14 @@
+# Remove the question mark from the request but maintain the query string
+# RewriteEngine On
+# RewriteBase /
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_URI} !/stylesheets
+# RewriteCond %{REQUEST_URI} !/scripts
+# RewriteCond %{REQUEST_URI} !/images
+# RewriteRule ^(.*)$ index.php?$1 [L,QSA]
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)$ index.php [QSA,L]
