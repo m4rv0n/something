@@ -3,13 +3,15 @@
 namespace Framework;
 
 use Doctrine\Common\Annotations\AnnotationReader;
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
 use Doctrine\ORM\Tools\Setup;
 
 class Model {
     /**
-     * @return |null
+     * @return \Doctrine\ORM\EntityManager|null
      * @throws \Doctrine\Common\Annotations\AnnotationException
+     * @throws \Doctrine\ORM\ORMException
      */
     public static function getEntityManager() {
         static $entityManager = \null;
