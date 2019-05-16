@@ -16,7 +16,7 @@ class Standard extends \Framework\Controller {
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function indexAction() {
+    public function indexAction () {
         $product_repository = new ProductRepository(Model::getEntityManager(), new ClassMetadata('App\Model\Product'));
 
         $products = $product_repository->findAll();
@@ -30,12 +30,12 @@ class Standard extends \Framework\Controller {
      * @throws \Doctrine\ORM\ORMException
      * @throws \Doctrine\ORM\OptimisticLockException
      */
-    public function createAction($amount) {
+    public function createAction ($amount) {
         for ($x = 1; $x <= $amount; $x++) {
             $product = new Product();
             $product->setName('Product_' . $x);
             $product->setDescription('Product_Description_' . $x);
-            $product->setImage('/path/to/file/product_' . $x . '.jpg');
+            $product->setImage('/static/images/product_' . $x . '.jpg');
             $product->setPrice($x);
 
             Model::getEntityManager()->persist($product);

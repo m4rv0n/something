@@ -1,0 +1,67 @@
+@color: #C69969;
+
+body {
+  font-family: 'Roboto', sans-serif;
+  width: 980px;
+}
+
+.fa-coins {
+  color: @color;
+  font-size: 19px;
+}
+
+smth-prod-list {
+  //border: 1px solid black;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+
+  smth-prod {
+    border: 1px solid lightgrey;
+    background: #f4f3ef;
+    width: 300px;
+    padding: 5px;
+
+    smth-prod-title {
+      color: @color;
+      display: block;
+    }
+
+    smth-prod-description {
+      display: block;
+      overflow-wrap: break-word;
+      margin: 10px 0;
+      color: #4e4e4e;
+    }
+
+    smth-prod-price {
+      color: #4e4e4e;
+    }
+
+    smth-prod-button {
+      cursor: default;
+      color: white;
+      padding: 3px 6px;
+      text-align: center;
+      display: inline-block;
+      font-size: 12px;
+      background-color: @color;
+      border: 1px solid white;
+      width: 100px;
+      float: right;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 2.3em;
+
+      transition: background-color 0.5s;
+
+      &:hover {
+        background-color: white;
+        border: 1px solid @color;
+        color: @color;
+        cursor: pointer;
+      }
+    }
+  }
+}

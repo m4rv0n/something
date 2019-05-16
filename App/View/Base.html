@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="">
 <head>
     <meta charset="UTF-8">
     <title>ProdView</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet/less" type="text/css" href="/static/css/styles.less"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
 </head>
 <body>
-{% for product in products %}
-<p>{{ product.name }} - {{ product.description }}</p>
-{% endfor %}
+<smth-prod-list>
+    {% for product in products %}
+    <smth-prod product-id="{{ product.identifier }}">
+        <smth-prod-img src="{{ product.image }}" width="300" height="150"></smth-prod-img>
+        <smth-prod-title>{{ product.name }}</smth-prod-title>
+        <smth-prod-description class="description">{{ product.description }}</smth-prod-description>
+        <smth-prod-price>{{ product.price }} <i class="fas fa-coins"></i></smth-prod-price>
+        <smth-prod-button type="order" product-id="{{ product.identifier }}">Order
+        </smth-prod-button>
+    </smth-prod>
+    {% endfor %}
+</smth-prod-list>
+<script src="/static/js/class/smth-prod.js"></script>
+<script src="/static/js/Order.js"></script>
 </body>
 </html>

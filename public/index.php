@@ -26,7 +26,6 @@ if (!isset($_SERVER['REDIRECT_URL'])) {
 
 $router->add('', ['controller' => 'Standard', 'action' => 'index']);
 $router->add('/', ['controller' => 'Standard', 'action' => 'index']);
-$router->add('/{action}', ['controller' => 'Standard']);
 $router->add('/{controller}', ['action' => 'index']);
 $router->add('/{controller}/', ['action' => 'index']);
 $router->add('/{controller}/{action}');
